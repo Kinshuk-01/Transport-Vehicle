@@ -2,11 +2,16 @@
 #define TRANSPORTVEHICLE_H
 
 #include <iostream>
+#include <memory>
 #include "VehicleType.h"
+#include "Permit.h"
+
+using PermitPtr = std::shared_ptr<Permit>;
 
 class TransportVehicle
 {
 private:
+    PermitPtr permit;
     VehicleType vtype;
     unsigned int seat_count;
     unsigned int stop_count;
@@ -20,6 +25,8 @@ public:
     unsigned int seatCount() const { return seat_count; }
 
     unsigned int stopCount() const { return stop_count; }
+
+    friend std::ostream &operator<<(std::ostream &os, const TransportVehicle &rhs);
 };
 
 #endif // TRANSPORTVEHICLE_H
