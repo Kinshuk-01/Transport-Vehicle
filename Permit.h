@@ -7,10 +7,12 @@ private:
     unsigned int permit_duration;
 
 public:
-    Permit(std::string pNum, int pDuration);
+    Permit(std::string pNum, unsigned int pDuration);
     ~Permit() = default;
 
-    std::string permitNumber() const { return permit_number; }
+    std::string getPermitNumber() const { return permit_number; }
 
-    unsigned int permitDuration() const { return permit_duration; }
+    unsigned int getPermitDuration() const { return permit_duration; }
+
+    friend std::ostream &operator<<(std::ostream &os, const Permit &rhs);
 };
