@@ -17,7 +17,7 @@ private:
     unsigned int stop_count;
 
 public:
-    TransportVehicle(VehicleType type, unsigned int seat, unsigned int stop);
+    TransportVehicle(PermitPtr permit, VehicleType type, unsigned int seat, unsigned int stop);
     ~TransportVehicle() = default;
 
     VehicleType getVtype() const { return vtype; }
@@ -25,6 +25,8 @@ public:
     unsigned int seatCount() const { return seat_count; }
 
     unsigned int stopCount() const { return stop_count; }
+
+    PermitPtr getPermit() const { return permit; }
 
     friend std::ostream &operator<<(std::ostream &os, const TransportVehicle &rhs);
 };
