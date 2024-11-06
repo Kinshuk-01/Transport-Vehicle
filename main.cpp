@@ -2,8 +2,7 @@
 #include "Functionalities.h"
 
 int main(){
-    // creating an object of class container
-    container data;
+     container data;
 
     createObjects(data);
     printPermitNumber(data, 1);
