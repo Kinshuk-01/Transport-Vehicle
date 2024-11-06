@@ -2,6 +2,7 @@
 #include "Functionalities.h"
 
 int main(){
+    // creating an object of class container
     container data;
 
     createObjects(data);
